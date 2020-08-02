@@ -1,0 +1,37 @@
+#!/usr/bin/perl -w
+# Modifed version of crc32 included in perl-archive-zip
+# Depends on perl-archive-zip obviously
+use 5.006;
+use strict;
+use Archive::Zip;
+use FileHandle;
+use File::Copy;
+
+my $fh = FileHandle->new();
+foreach my $file (@ARGV) {
+	if ( -d $file ) {
+               next; 
+        }
+	elsif ( $file =~ /[^[:xdigit:]]([[:xdigit:]]{8})[^[:xdigit:]]/ ) {
+                next;
+        }
+        elsif ( !$fh->open( $file, 'r' ) ) {
+                warn "$0: Cannot open $file: $!\n";
+                next;
+        }
+	my ($suffix) = $file =~ /(\.[^.]+)$/;
+	if ( ! $suffix ) {
+		next;
+	}
+	binmode($fh);
+	my $buffer;
+      	my $bytesRead;
+	my $crc = 0;
+	while ( $bytesRead = $fh->read( $buffer, 32768 ) ) {
+       	        $crc = Archive::Zip::computeCRC32( $buffer, $crc );
+       	}
+	my $filecrc = uc sprintf( "%08x", $crc );
+      	(my $filename = $file) =~ s/\.[^.]+$//;
+	my $filenamecrc = sprintf( "$filename\[$filecrc]$suffix" );
+	move( $file, $filenamecrc ) and print("Renamed $file => $filenamecrc\n") or warn "$0: 	Cannot rename $file: $!\n";
+}

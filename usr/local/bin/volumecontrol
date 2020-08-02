@@ -1,0 +1,50 @@
+#!/bin/bash
+if pidof -x "$(basename "$0")" -o $$ > /dev/null; then
+	exit 0
+fi
+sink=$(pacmd list-sinks | awk '/\* index:/{ print $3 }')
+if [[ "$1" =~ ^[0-9]+$ ]]; then
+	if [ "$1" -gt 100 ]; then
+		setvol=100
+	else
+		setvol="$1"
+	fi
+	pactl set-sink-volume "$sink" "$setvol"%
+elif [ "$1" = "up" ] && [[ "$2" =~ ^[0-9]+$ ]]; then
+	setvol="$2"
+	curvol="$(pacmd list-sinks | grep -A 15 '* index' | awk '/volume: front/{ print substr($5, 1, length($5)-1 ) }')"
+	if [ "$curvol" -lt 100 ]; then
+		if [ "$setvol" -gt 100 ]; then
+			setvol=100
+		fi
+		pactl set-sink-volume "$sink" +"$setvol"%
+	fi
+elif [ "$1" = "down" ] && [[ "$2" =~ ^[0-9]+$ ]]; then
+	setvol="$2"
+        if [ "$setvol" -gt 100 ]; then
+        	setvol=100
+        fi
+	pactl set-sink-volume "$sink" -"$setvol"%
+elif [ "$1" = "mute" ]; then
+	pactl set-sink-mute "$sink" toggle
+	muted=$(pacmd list-sinks | grep -A 15 '* index' | awk '/muted:/{ print $2 }')
+	if [ "$muted" = "yes" ]; then
+		notify-send -t 1000 -h string:synchronous:volume -t 1000 'Volume: muted'
+		exit 0
+	fi
+fi
+curvol="$(pacmd list-sinks | grep -A 15 '* index' | awk '/volume: front/{ print substr($5, 1, length($5)-1 ) }')"
+if [ "$curvol" -gt 0 ]; then
+	if [ "${#curvol}" -ge 2 ]; then
+		for ((i=0;i<"${curvol:: -1}";i++)); do
+			slider+="█"
+		done
+	fi
+	if [ "${curvol: -1}" -gt 0 ]; then
+	        slider+="▄"
+	fi
+fi
+while [ "${#slider}" -lt 10 ]; do
+	slider+="─"
+done
+notify-send -t 1000 -h string:synchronous:volume "Volume: $curvol% │$slider│"

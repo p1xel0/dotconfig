@@ -1,0 +1,16 @@
+#!/bin/bash
+killall polybar
+killall dunst
+xrandr --output DisplayPort-0 --off --output HDMI-A-0 --off
+i3lock -c 000000 -u -n
+while ! xrandr -q | grep ^'DisplayPort-0' | grep -q mm$; do 
+	xrandr --output 'DisplayPort-0' --auto
+	sleep 0.25s
+done
+while ! xrandr -q | grep ^'HDMI-A-0' | grep -q mm$; do
+	xrandr --output 'HDMI-A-0' --auto --right-of 'DisplayPort-0'
+	sleep 0.25s	
+done
+polybar main &
+polybar alt &
+dunst &

@@ -1,0 +1,6 @@
+#!/bin/bash
+if [ ! -d ~/Pictures/ ]; then
+	mkdir -p ~/Pictures/
+fi
+cd ~/Pictures/
+scrot "$@" && sleep 1 && notify-send 'screenshot has been saved in ~/Pictures/'

@@ -1,0 +1,10 @@
+#
+# ~/.bash_profile
+#
+
+[[ -f ~/.bashrc ]] && . ~/.bashrc
+if systemctl -q is-active graphical.target && [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
+	exec startx
+	exec pulseaudio
+	exec xrandr --output DisplayPort-0 --auto --output HDMI-A-0 --auto --right-of DisplayPort-0
+fi

@@ -1,0 +1,12 @@
+#!/bin/bash
+if [ -f /var/tmp/dumps ]; then
+	rm /var/tmp/dumps
+fi
+if [ ! -d /var/tmp/dumps/ ]; then
+	mkdir /var/tmp/dumps/
+fi
+if [ "$(readlink /tmp/dumps)" != /var/tmp/dumps/ ]; then
+	rm -rf /tmp/dumps
+	ln -s /var/tmp/dumps/ /tmp/dumps 
+fi
+/usr/bin/steam
