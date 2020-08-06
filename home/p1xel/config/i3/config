@@ -75,7 +75,7 @@ bindsym Henkan_Mode exec firefox
 bindsym Muhenkan exec --no-startup-id steam
 bindsym XF86Open exec --no-startup-id displaytoggle
 ## Planck R2 ##
-# bindsym Hangul_Hanja
+# bindsym Hangul_Hanja ##assigned as deadbeef hotkey##
 # bindsym Hangul
 # bindsym Cancel
 # bindsym Help
@@ -105,15 +105,23 @@ bindsym XF86Open exec --no-startup-id displaytoggle
 # bindsym XF86Reload
 # bindsym XF86Cut
 ## Planck R8 ##
-# bindsym XF86Explorer
-# bindsym Find
-# bindsym XF86Mail
-# bindsym XF86Calculator
+bindsym XF86Explorer workspace $ws1
+bindsym Find workspace $ws2
+bindsym XF86Mail workspace $ws3
+bindsym XF86Calculator workspace $ws4
+bindsym Shift+XF86Explorer move container to workspace $ws1; workspace $ws1
+bindsym Shift+Find move container to workspace $ws2; workspace $ws2
+bindsym Shift+XF86Mail move container to workspace $ws3; workspace $ws3
+bindsym Shift+XF86Calculator move container to workspace $ws4; workspace $ws4
 ## Planck R9 ##
-# bindsym XF86Copy
-# bindsym XF86Paste
-# bindsym Undo
-# bindsym SunFront
+bindsym XF86Copy workspace $ws5
+bindsym XF86Paste workspace $ws6
+bindsym Undo workspace $ws7
+bindsym SunFront workspace $ws8
+bindsym Shift+XF86Copy move container to workspace $ws5; workspace $ws5
+bindsym Shift+XF86Paste Amove container to workspace $ws6; workspace $ws6
+bindsym Shift+Undo move container to workspace $ws7; workspace $ws7
+bindsym Shift+SunFront move container to workspace $ws8; workspace $ws8
 
 # focus_follows_mouse no
 

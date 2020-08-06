@@ -2,7 +2,7 @@ artwork.filemask *cover*.jpg;*front*.jpg;*folder*.jpg;*cover*.png;*front*.png;*f
 cli_add_playlist_name Default
 close_send_to_tray 1
 deadbeef_version 1.8.4
-filechooser.lastdir file:///home/p1xel/Music/Deezloader/Left%C3%B6ver%20Crack/Leftover%20Leftover%20Crack
+filechooser.lastdir file:///home/p1xel/Music/Deezloader/Anti-Flag/Their%20System%20Doesn't%20Work%20for%20You%20(Re-Mastered)
 gtkui.action_separators 0
 gtkui.color.bar_foreground 57311 57311 57311
 gtkui.columns.playlist [{"title":"♫","id":"1","format":"%playstatus%","sort_format":"","size":"50","align":"0","color_override":"0","color":"#ff000000"},{"title":"Artist","id":"-1","format":"$if(%artist%,%artist%,Unknown Artist)","sort_format":"","size":"133","align":"0","color_override":"0","color":"#ffb9c3c7"},{"title":"Album","id":"-1","format":"%album%","sort_format":"","size":"149","align":"0","color_override":"0","color":"#ff000000"},{"title":"Track No","id":"-1","format":"%tracknumber%","sort_format":"","size":"68","align":"2","color_override":"0","color":"#ff000000"},{"title":"Title","id":"-1","format":"%title%","sort_format":"","size":"150","align":"0","color_override":"0","color":"#ff000000"},{"title":"Duration","id":"-1","format":"%length%","sort_format":"","size":"72","align":"0","color_override":"0","color":"#ff000000"}]
@@ -56,7 +56,7 @@ hotkey.key29 "XF86AudioNext" 0 1 next
 hotkey.key30 "n" 0 0 playback_random
 hotkey.key31 "Ctrl k" 0 0 toggle_stop_after_album
 hotkey.key32 "Super c" 0 1 toggle_player_window
-hotkey.key33 "XF86Copy" 0 1 toggle_player_window
+hotkey.key33 "Hangul_Hanja" 0 1 toggle_player_window
 hotkeys_created 1
 logwindow.geometry.h 200
 logwindow.geometry.w 400
@@ -64,7 +64,7 @@ logwindow.geometry.x 40
 logwindow.geometry.y 40
 mainwin.geometry.h 507
 mainwin.geometry.w 684
-mainwin.geometry.x 2516
+mainwin.geometry.x 596
 mainwin.geometry.y 360
 network.proxy.port 8080
 notify.albumart 1
@@ -76,18 +76,18 @@ output_plugin alsa
 playback.loop 1
 playback.volume 0.0000000
 playlist.current 0
-playlist.cursor.0 3
-playlist.scroll.0 -3
+playlist.cursor.0 8
+playlist.scroll.0 -8
 playlist.scroll.cursorfollowplayback 1
 playlist.tab.00000 Default
 prefwin.geometry.h 593
 prefwin.geometry.w 686
 prefwin.geometry.x 960
 prefwin.geometry.y 263
-resume.paused 1
+resume.paused 0
 resume.playlist 0
-resume.position 0.0000000
-resume.track 3
+resume.position 98.731658
+resume.track 8
 resume_last_session 0
 streamer.override_samplerate 0
 streamer.samplerate 44100
