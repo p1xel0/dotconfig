@@ -81,7 +81,6 @@ expat
 fakeroot
 ffmpeg
 ffmpegthumbnailer
-ffms2
 fftw
 file
 filesystem
@@ -161,7 +160,7 @@ iso-codes
 jack2
 jansson
 jfsutils
-js60
+js68
 json-c
 json-glib
 jsoncpp
@@ -415,6 +414,7 @@ nerd-fonts-jetbrains-mono
 netctl
 nettle
 networkmanager
+newsboat
 nitrogen
 noto-fonts
 noto-fonts-cjk
@@ -518,6 +518,7 @@ sqlite
 srt
 startup-notification
 steam
+stfl
 sudo
 sysfsutils
 systemd
