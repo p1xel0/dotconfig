@@ -99,7 +99,6 @@ gc
 gcc
 gcc-libs
 gcolor3
-gd
 gdbm
 gdk-pixbuf2
 gettext
@@ -359,7 +358,6 @@ libxkbfile
 libxml2
 libxmu
 libxnvctrl
-libxpm
 libxrandr
 libxrender
 libxshmfence
