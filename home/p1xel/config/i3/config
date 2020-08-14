@@ -119,7 +119,7 @@ bindsym XF86Paste workspace $ws6
 bindsym Undo workspace $ws7
 bindsym SunFront workspace $ws8
 bindsym Shift+XF86Copy move container to workspace $ws5; workspace $ws5
-bindsym Shift+XF86Paste Amove container to workspace $ws6; workspace $ws6
+bindsym Shift+XF86Paste move container to workspace $ws6; workspace $ws6
 bindsym Shift+Undo move container to workspace $ws7; workspace $ws7
 bindsym Shift+SunFront move container to workspace $ws8; workspace $ws8
 
