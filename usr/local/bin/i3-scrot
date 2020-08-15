@@ -3,4 +3,15 @@ if [ ! -d ~/Pictures/ ]; then
 	mkdir -p ~/Pictures/
 fi
 cd ~/Pictures/
-scrot "$@" && sleep 1 && notify-send 'screenshot has been saved in ~/Pictures/'
+if [ -z "$@" ]; then
+	eval $(xdotool getmouselocation --shell)
+	if [ "$X" -lt 1920 ]; then
+		scrot -a 0,0,1920,1080
+	else
+		scrot -a 1920,0,1920,1080		
+	fi
+else
+	scrot "$@"
+fi
+sleep 1
+notify-send 'screenshot has been saved in ~/Pictures/'
