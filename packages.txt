@@ -408,7 +408,7 @@ ncdu
 ncurses
 ndctl
 neofetch
-nerd-fonts-jetbrains-mono
+nerd-fonts-hack
 netctl
 nettle
 networkmanager
