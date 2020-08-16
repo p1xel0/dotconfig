@@ -41,7 +41,7 @@ if [ "$curvol" -gt 0 ]; then
 		done
 	fi
 	if [ "${curvol: -1}" -gt 0 ]; then
-	        slider+="▄"
+	        slider+="░"
 	fi
 fi
 while [ "${#slider}" -lt 10 ]; do
