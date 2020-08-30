@@ -11,7 +11,6 @@ aom
 archlinux-keyring
 argon2
 aria2
-aspell
 at-spi2-atk
 at-spi2-core
 atk
@@ -21,9 +20,6 @@ audit
 autoconf
 automake
 avahi
-avr-binutils
-avr-gcc
-avr-libc
 base
 bash
 bc
@@ -51,7 +47,6 @@ cmark
 colord
 conky-git
 coreutils
-cracklib
 cryptsetup
 curl
 dav1d
@@ -141,7 +136,6 @@ harfbuzz-icu
 hicolor-icon-theme
 hidapi
 highlight
-hspell
 htop
 hwids
 hwloc
@@ -332,7 +326,6 @@ libva
 libva-mesa-driver
 libvdpau
 libvisual
-libvoikko
 libvorbis
 libvpx
 libwacom
@@ -342,6 +335,7 @@ libx11
 libxau
 libxcb
 libxcomposite
+libxcrypt
 libxcursor
 libxdamage
 libxdg-basedir
@@ -471,7 +465,6 @@ pygobject-devel
 python
 python-appdirs
 python-attrs
-python-colorama
 python-docopt
 python-gobject
 python-keyutils
@@ -486,7 +479,6 @@ python-xlib
 python-yaml
 qt5-base
 qt5-multimedia
-qt5-svg
 radeontop
 ranger
 rav1e
@@ -524,12 +516,10 @@ systemd-libs
 systemd-sysvcompat
 talloc
 tar
-tcl
 tdb
 tevent
 texinfo
 thin-provisioning-tools
-tk
 tslib
 ttf-bitstream-vera
 ttf-liberation
