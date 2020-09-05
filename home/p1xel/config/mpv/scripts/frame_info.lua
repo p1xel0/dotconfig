@@ -1,20 +1,21 @@
 local assdraw = require "mp.assdraw"
 local options = require "mp.options"
 
-local info_active = false
 local o = {
     font_size = 10,
     font_color = "FFFFFF",
     border_size = 1.0,
     border_color = "000000",
+    alpha = "64",
 }
 options.read_options(o)
 
 function get_formatting()
     return string.format(
-        "{\\fs%d}{\\1c&H%s&}{\\bord%f}{\\3c&H%s&}",
+        "{\\fs%d}{\\1c&H%s&}{\\bord%f}{\\3c&H%s&}{\\alpha&H%s&}",
         o.font_size, o.font_color,
-        o.border_size, o.border_color
+        o.border_size, o.border_color,
+	o.alpha
     )
 end
 
@@ -29,16 +30,17 @@ end
 
 function get_info()
     return string.format(
-        "%sName: %s\\NTime: %s",
+        "%sName: %s\\NTime: %s / %s",
         get_formatting(),
         mp.get_property("filename"),
-        timestamp(mp.get_property_native("time-pos"))
+        timestamp(mp.get_property_native("time-pos")),
+    	timestamp(mp.get_property_native("duration"))
     )
 end
 
 function render_info()
     ass = assdraw.ass_new()
-    ass:pos(0, 0)
+    ass:pos(2, 0)
     ass:append(get_info())
     mp.set_osd_ass(0, 0, ass.text)
 end
@@ -47,16 +49,15 @@ function clear_info()
     mp.set_osd_ass(0, 0, "")
 end
 
+local osd_info = mp.add_periodic_timer(0.001, render_info)
+osd_info:kill()
 function toggle_info()
-    if info_active then
-        mp.unregister_event(render_info)
-        clear_info()
+    if osd_info:is_enabled() then
+    	clear_info()
+	osd_info:kill()
     else
-        -- TODO: Rewrite to timer + pause/unpause handlers.
-        mp.register_event("tick", render_info)
-        render_info()
+	osd_info:resume()
     end
-    info_active = not info_active
 end
 
 mp.add_key_binding("TAB", mp.get_script_name(), toggle_info)
