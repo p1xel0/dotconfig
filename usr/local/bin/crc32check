@@ -11,11 +11,10 @@ use FileHandle;
 
 my $fh = FileHandle->new();
 my @files;
-my @sorted_files;
 
 find({ wanted => \&check_files, no_chdir => 1 }, '.');
 sub check_files{push( @files, $_ )}
-@sorted_files = sort {lc( $a ) cmp lc( $b )} @files;
+my @sorted_files = sort {lc( $a ) cmp lc( $b )} @files;
 foreach my $file (@sorted_files) {
 	if ( -d $file ) {
 		next;
