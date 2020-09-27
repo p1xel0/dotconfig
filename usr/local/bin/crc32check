@@ -32,13 +32,13 @@ foreach my $file (@sorted_files) {
 			$crc = Archive::Zip::computeCRC32( $buffer, $crc );
 		}
 		my $fileCrc = uc sprintf("%08x", $crc);
-		printf("$fileCrc \t $file");
+		printf("$file");
 		my $filenameCrc = uc $1;
 		if ( lc($filenameCrc) eq lc($fileCrc) ) {
-			print(" \t OK")
+			print(" \t\033[32;1mOK\033[0m")
 		}
 		else {
-			print(" | BAD $fileCrc != $filenameCrc");
+			print(" \t\033[31;1mBAD $fileCrc != $filenameCrc\033[0m");
 		}
 	}
 	else {
