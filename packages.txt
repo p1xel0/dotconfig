@@ -320,7 +320,6 @@ libtool
 libunistring
 libunwind
 libusb
-libutil-linux
 libuv
 libva
 libva-mesa-driver
@@ -465,6 +464,7 @@ pygobject-devel
 python
 python-appdirs
 python-attrs
+python-dbus-common
 python-docopt
 python-gobject
 python-keyutils
@@ -477,6 +477,8 @@ python-setuptools
 python-six
 python-xlib
 python-yaml
+python2
+python2-dbus
 qt5-base
 qt5-multimedia
 radeontop
@@ -532,6 +534,7 @@ unrar
 unzip
 usbutils
 util-linux
+util-linux-libs
 v4l-utils
 vamp-plugin-sdk
 vi
@@ -555,6 +558,7 @@ wpa_supplicant
 wpebackend-fdo
 x264
 x265
+xboxdrv
 xcb-proto
 xcb-util
 xcb-util-cursor
