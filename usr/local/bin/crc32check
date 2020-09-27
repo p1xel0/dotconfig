@@ -1,0 +1,48 @@
+#!/usr/bin/perl -w
+# Modifed version of crc32 included in perl-archive-zip
+# Depends on perl-archive-zip obviously
+# Recursively checks the CRC32 hash of files that contain a hash in the filename 
+
+use 5.006;
+use strict;
+use Archive::Zip;
+use File::Find;
+use FileHandle;
+
+my $fh = FileHandle->new();
+my @files;
+my @sorted_files;
+
+find({ wanted => \&check_files, no_chdir => 1 }, '.');
+sub check_files{push( @files, $_ )}
+@sorted_files = sort {lc( $a ) cmp lc( $b )} @files;
+foreach my $file (@sorted_files) {
+	if ( -d $file ) {
+		next;
+	}
+	if ( !$fh->open( $file, 'r' ) ) {
+		next;
+	}
+	if ( $file =~ /[^[:xdigit:]]([[:xdigit:]]{8})[^[:xdigit:]]/ ) {
+		binmode($fh);
+		my $buffer;
+		my $bytesRead;
+		my $crc = 0;
+		while ( $bytesRead = $fh->read( $buffer, 32768 ) ) {
+			$crc = Archive::Zip::computeCRC32( $buffer, $crc );
+		}
+		my $fileCrc = uc sprintf("%08x", $crc);
+		printf("$fileCrc \t $file");
+		my $filenameCrc = uc $1;
+		if ( lc($filenameCrc) eq lc($fileCrc) ) {
+			print(" \t OK")
+		}
+		else {
+			print(" | BAD $fileCrc != $filenameCrc");
+		}
+	}
+	else {
+		next;
+	}
+	print("\n");
+}	
