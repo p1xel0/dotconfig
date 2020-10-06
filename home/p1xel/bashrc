@@ -70,7 +70,7 @@ extract() {
     done
     return "$e"
 }
-# Grab latest HorribleSubs release from rclone drive
+# Grab latest Erai-Raws release from rclone drive
 eget() {
 	local i f
 	(($#)) || return
