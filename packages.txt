@@ -2,6 +2,7 @@ acl
 adapta-gtk-theme
 adobe-source-code-pro-fonts
 adwaita-icon-theme
+alsa-card-profiles
 alsa-lib
 alsa-plugins
 alsa-topology-conf
@@ -153,7 +154,7 @@ iso-codes
 jack2
 jansson
 jfsutils
-js68
+js78
 json-c
 json-glib
 jsoncpp
@@ -230,6 +231,7 @@ libcap-ng
 libcddb
 libcdio
 libcdio-paranoia
+libcloudproviders
 libconfig
 libcroco
 libcups
@@ -310,6 +312,7 @@ libsoup
 libsoxr
 libssh
 libssh2
+libstemmer
 libtasn1
 libteam
 libthai
@@ -401,7 +404,8 @@ ncdu
 ncurses
 ndctl
 neofetch
-nerd-fonts-complete
+nerd-fonts-hack
+nerd-fonts-jetbrains-mono
 netctl
 nettle
 networkmanager
@@ -460,7 +464,6 @@ procps-ng
 psmisc
 pulseaudio
 pulseaudio-alsa
-pygobject-devel
 python
 python-appdirs
 python-attrs
@@ -519,6 +522,7 @@ tdb
 tevent
 texinfo
 thin-provisioning-tools
+tracker3
 tslib
 ttf-bitstream-vera
 ttf-liberation
