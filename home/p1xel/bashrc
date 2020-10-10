@@ -9,7 +9,7 @@
 alias ls='ls --color=auto'
 alias grep='grep --colour=auto'
 alias f="ssh p1xel@pallas.feralhosting.com"
-alias e="cd ~/Downloads/Erai/"
+alias h="cd ~/Downloads/HorribleSubs/"
 alias lsd="ls -d */ 2> /dev/null"
 alias ..="cd .."
 alias a="cd '/run/media/hdd/Media/Videos/TV Shows/Anime/'"
@@ -70,24 +70,24 @@ extract() {
     done
     return "$e"
 }
-# Grab latest Erai-Raws release from rclone drive
-eget() {
+# Grab latest SubsPlease release from rclone drive
+hget() {
 	local i f
 	(($#)) || return
 	for i; do
-		f="$(rclone lsf drive:/Erai/"$i" | tail -1)"
+		f="$(rclone lsf drive:/HorribleSubs/"$i" | tail -1)"
 		if [ -z "$i" ]; then continue; fi
-		mkdir -p ~/Downloads/Erai/"$i"
-		rclone copy --progress drive:/Erai/"$i"/"$f" ~/Downloads/Erai/"$i"/
+		mkdir -p ~/Downloads/HorribleSubs/"$i"
+		rclone copy --progress drive:/HorribleSubs/"$i"/"$f" ~/Downloads/HorribleSubs/"$i"/
 	done
 }
-# Sort Erai-Raws files by show name
-esort() {
-	ls -- \[Erai-Raws\]\ *.mkv &> /dev/null || return
+# Sort SubsPlease files by show name
+spsort() {
+	ls -- \[SubsPlease\]\ *.mkv &> /dev/null || return
 	local i d
-	for i in \[Erai-Raws\]\ *.mkv; do
-		d="${i% -*}"
-		d="${d:12}"
+	for i in \[SubsPlease\]\ *.mkv; do
+		d="${i:13}"
+		d="${d% - *}"
 		mkdir -p "$d"
 		mv "$i" "$d"
 	done
