@@ -62,7 +62,7 @@ dfu-programmer
 dhcpcd
 dialog
 diffutils
-discord
+discord-canary
 dmraid
 dnssec-anchors
 dosfstools
@@ -295,6 +295,7 @@ libpgm
 libpipeline
 libplacebo
 libpng
+libportal
 libproxy
 libpsl
 libpulse
@@ -481,7 +482,6 @@ python-xlib
 python-yaml
 qt5-base
 qt5-multimedia
-radeontop
 ranger
 rav1e
 readline
