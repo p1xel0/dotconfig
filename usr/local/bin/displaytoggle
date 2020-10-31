@@ -1,4 +1,5 @@
 #!/bin/bash
+eval "$(xdotool getmouselocation --shell)"
 killall polybar
 killall dunst
 xrandr --output DisplayPort-0 --off --output HDMI-A-0 --off
@@ -14,3 +15,9 @@ done
 polybar main &
 polybar alt &
 dunst &
+if [ "$X" -lt 1920 ]; then
+	xdotool mousemove 1920 1080
+else
+	xdotool mousemove 1919 1080
+fi
+xdotool mousemove "$X" "$Y"
