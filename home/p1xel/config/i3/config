@@ -231,7 +231,7 @@ bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
 
 # Open specific applications in floating mode
 for_window [class="Lxappearance"] floating enable sticky enable border normal
-for_window [title="DeaDBeeF"] floating enable
+for_window [class="Deadbeef"] floating enable
 for_window [class="Nitrogen"] floating enable sticky enable border normal
 for_window [class="Pavucontrol"] floating enable border normal
 for_window [class="mpv"] floating enable 
