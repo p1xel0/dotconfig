@@ -65,12 +65,14 @@ diffutils
 discord
 dmraid
 dnssec-anchors
+dolphin-emu
 dosfstools
 double-conversion
 dunst
 e2fsprogs
 elfutils
 enchant
+enet
 epdfview
 exiv2
 expat
@@ -101,11 +103,13 @@ gettext
 giblib
 giflib
 git
+glew
 glib-networking
 glib2
 glibc
 glibmm
 glslang
+glu
 gmp
 gnupg
 gnutls
@@ -398,11 +402,13 @@ mailcap
 make
 man-db
 man-pages
+mbedtls
 md4c
 mdadm
 mediainfo
 mesa
 mesa-vdpau
+miniupnpc
 mkinitcpio
 mkinitcpio-busybox
 mkvtoolnix-cli
@@ -429,6 +435,7 @@ npth
 nspr
 nss
 ntfs-3g
+numix-icon-theme-git
 openal
 opencore-amr
 openjpeg2
@@ -473,6 +480,7 @@ poppler-glib
 popt
 procps-ng
 psmisc
+pugixml
 pulseaudio
 pulseaudio-alsa
 python
@@ -506,6 +514,7 @@ s-nail
 scrot
 sdl2
 sed
+sfml
 shaderc
 shadow
 shared-mime-info

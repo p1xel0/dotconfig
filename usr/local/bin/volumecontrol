@@ -29,7 +29,7 @@ elif [ "$1" = "mute" ]; then
 	pactl set-sink-mute "$sink" toggle
 	muted=$(pacmd list-sinks | grep -A 15 '* index' | awk '/muted:/{ print $2 }')
 	if [ "$muted" = "yes" ]; then
-		notify-send -t 1000 -h string:synchronous:volume -t 1000 'Volume: muted'
+		notify-send -i audio-volume-muted -t 1000 -h string:synchronous:volume -t 1000 'Volume: muted'
 		exit 0
 	fi
 fi
@@ -47,4 +47,4 @@ fi
 while [ "${#slider}" -lt 10 ]; do
 	slider+="─"
 done
-notify-send -t 1000 -h string:synchronous:volume "Volume: $curvol% │$slider│"
+notify-send -i audio-volume-high -t 1000 -h string:synchronous:volume "Volume: $curvol% │$slider│"
