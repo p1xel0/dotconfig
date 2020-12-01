@@ -39,6 +39,7 @@ bindsym Shift+XF86AudioLowerVolume exec --no-startup-id volumecontrol down 1
 bindsym XF86AudioRaiseVolume exec --no-startup-id volumecontrol up 5
 bindsym Shift+XF86AudioRaiseVolume exec --no-startup-id volumecontrol up 1
 bindsym XF86AudioMute exec --no-startup-id volumecontrol mute
+bindsym $mod+Shift+Delete exec --no-startup-id speakertoggle
 
 # Autostart applications
 exec --no-startup-id xset dpms 0 0 0 s off -dpms

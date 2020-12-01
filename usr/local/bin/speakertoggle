@@ -1,0 +1,7 @@
+#!/bin/bash
+state="$(pactl list cards | grep -A25 'Name: alsa_card.usb-Topping_D10-00' | awk '/Active Profile: /{ print $3 }')"
+if [ "$state" = 'output:analog-stereo' ]; then
+	pactl set-card-profile alsa_card.usb-Topping_D10-00 off
+else
+	pactl set-card-profile alsa_card.usb-Topping_D10-00 output:analog-stereo
+fi
