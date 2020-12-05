@@ -47,4 +47,4 @@ fi
 while [ "${#slider}" -lt 10 ]; do
 	slider+="─"
 done
-notify-send -i audio-volume-high -t 1000 -h string:synchronous:volume "Volume: $curvol% │$slider│"
+notify-send -i audio-volume-high -t 1000 -h string:synchronous:volume -h int:transient:1 "Volume: $curvol% │$slider│"
