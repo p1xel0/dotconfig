@@ -423,12 +423,14 @@ netctl
 nettle
 networkmanager
 nitrogen
+notify-send.sh
 noto-fonts
 noto-fonts-cjk
 npth
 nspr
 nss
 ntfs-3g
+numix-icon-theme-git
 openal
 opencore-amr
 openjpeg2
