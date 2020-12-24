@@ -54,7 +54,6 @@ exec --no-startup-id conky -m 1
 
 # Start Applications
 bindsym $mod+F2 exec firefox
-bindsym $mod+F3 exec kitty bash -c newsboat
 bindsym Mod4+Mod1+space exec kitty bash -c ranger
 bindsym Print exec --no-startup-id i3-scrot
 bindsym $mod+Print --release exec --no-startup-id i3-scrot -u

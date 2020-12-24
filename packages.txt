@@ -36,13 +36,12 @@ c-ares
 ca-certificates
 ca-certificates-mozilla
 ca-certificates-utils
-cairo
+cairo-ubuntu
 cairomm
 cantarell-fonts
 capitaine-cursors
 cdparanoia
 celt
-cifs-utils
 cmake
 cmark
 colord
@@ -171,7 +170,6 @@ krb5
 l-smash
 lame
 lcms2
-ldb
 ldns
 less
 lib32-alsa-lib
@@ -237,7 +235,6 @@ libatasmart
 libavc1394
 libblockdev
 libbluray
-libbsd
 libbytesize
 libcaca
 libcanberra
@@ -275,7 +272,6 @@ libice
 libid3tag
 libidn2
 libiec61883
-libimagequant
 libinput
 libjpeg-turbo
 libksba
@@ -387,7 +383,6 @@ linux-api-headers
 linux-firmware
 llvm-libs
 lm_sensors
-lmdb
 logrotate
 lsb-release
 lsof
@@ -427,7 +422,6 @@ nerd-fonts-jetbrains-mono
 netctl
 nettle
 networkmanager
-newsboat
 nitrogen
 noto-fonts
 noto-fonts-cjk
@@ -435,7 +429,6 @@ npth
 nspr
 nss
 ntfs-3g
-numix-icon-theme-git
 openal
 opencore-amr
 openjpeg2
@@ -485,18 +478,14 @@ pulseaudio
 pulseaudio-alsa
 python
 python-appdirs
-python-attrs
 python-docopt
 python-gobject
 python-keyutils
 python-ordered-set
 python-packaging
-python-pillow
-python-psutil
 python-pyparsing
 python-setuptools
 python-six
-python-xlib
 python-yaml
 qt5-base
 qt5-multimedia
@@ -519,7 +508,6 @@ shaderc
 shadow
 shared-mime-info
 slang
-smbclient
 sound-theme-freedesktop
 speedtest-cli
 speex
@@ -529,16 +517,13 @@ sqlite
 srt
 startup-notification
 steam
-stfl
 sudo
 sysfsutils
 systemd
 systemd-libs
 systemd-sysvcompat
-talloc
 tar
 tdb
-tevent
 texinfo
 thin-provisioning-tools
 tracker3
@@ -549,7 +534,6 @@ tzdata
 uchardet
 udiskie
 udisks2
-ueberzug
 unrar
 unzip
 usbutils
