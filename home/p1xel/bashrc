@@ -19,7 +19,7 @@ alias l="ls -l"
 alias s="cd /run/media/storage/"
 alias gtop="watch -n 1 -t -e 'sudo pcregrep -M "'"GFX Clocks.*(\n.*)*GPU Load.*"'" /sys/kernel/debug/dri/0/amdgpu_pm_info'"
 alias m="cd /run/media/"
-alias splist="wget -qO- 'https://subsplease.org/rss/?t&r=1080' | sed 's/<link>/\n/g' | grep -o '<title>.*</title>' | tail -n +2 | sed 's/^<title>//;s/<\/title>$//' | tac"
+alias splist="wget -qO- 'https://subsplease.org/rss/?t&r=1080' | sed 's/<link>/\n/g' | grep -o '<title>.*</title>' | tail -n +2 | sed 's/^<title>//;s/<\/title>$//;s/&amp;/\x26/g;s/&apos;/\x27/g' | tac"
 
 PS1='\[\033[01;32m\][\u@\h\[\033[01;36m\] \w\[\033[01;32m\]]\$\[\033[00m\] '
 
