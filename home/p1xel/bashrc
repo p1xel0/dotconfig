@@ -78,7 +78,7 @@ hget() {
 		f="$(rclone lsf drive:/HorribleSubs/"$i" | tail -1)"
 		if [ -z "$i" ]; then continue; fi
 		mkdir -p ~/Downloads/HorribleSubs/"$i"
-		rclone copy --progress drive:/HorribleSubs/"$i"/"$f" ~/Downloads/HorribleSubs/"$i"/
+		rclone copy --progress --ignore-existing drive:/HorribleSubs/"$i"/"$f" ~/Downloads/HorribleSubs/"$i"/
 	done
 }
 # Sort SubsPlease files by show name
