@@ -35,7 +35,7 @@ c-ares
 ca-certificates
 ca-certificates-mozilla
 ca-certificates-utils
-cairo-ubuntu
+cairo
 cairomm
 cantarell-fonts
 capitaine-cursors
@@ -442,6 +442,7 @@ p7zip
 pacman
 pacman-contrib
 pacman-mirrorlist
+pahole
 pam
 pambase
 pango
