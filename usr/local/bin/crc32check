@@ -8,13 +8,43 @@ use strict;
 use Archive::Zip;
 use File::Find;
 use FileHandle;
+use Getopt::Std;
+use File::Basename;
 
+$Getopt::Std::STANDARD_HELP_VERSION = 1;
+
+our $VERSION = 'v0.1';
+my $name = basename($0);
+
+sub VERSION_MESSAGE { print <<EOF;
+Usage: $name [OPTION]... [FILE]...
+  -h/--help         displays this help and exit
+  -q                don't print OK for each successfully verified file
+  -s                don't output anything, status code shows success
+  -r                recursivly check all files containing a CRC32 hash
+$name $VERSION on perl $^V
+EOF
+exit}
+
+my %options=();
+getopts('hqsr', \%options);
+VERSION_MESSAGE if defined $options{h};
+VERSION_MESSAGE if ! @ARGV && ! $options{r};
+
+my $status=0;
 my $fh = FileHandle->new();
 my @files;
+my @sorted_files;
 
-find({ wanted => \&check_files, no_chdir => 1 }, '.');
-sub check_files{push( @files, $_ )}
-my @sorted_files = sort {lc( $a ) cmp lc( $b )} @files;
+if ( defined($options{r}) ) { 
+	find({ wanted => \&check_files, no_chdir => 1 }, '.');
+	sub check_files{push( @files, $_ )}
+	@sorted_files = sort {lc( $a ) cmp lc( $b )} @files;
+}
+else {
+	@sorted_files = @ARGV;
+}
+
 foreach my $file (@sorted_files) {
 	if ( -d $file ) {
 		next;
@@ -31,17 +61,30 @@ foreach my $file (@sorted_files) {
 			$crc = Archive::Zip::computeCRC32( $buffer, $crc );
 		}
 		my $fileCrc = uc sprintf("%08x", $crc);
-		printf("$file");
 		my $filenameCrc = uc $1;
 		if ( lc($filenameCrc) eq lc($fileCrc) ) {
-			print(" \t\033[32;1mOK\033[0m")
+			if ( defined($options{q}) || defined($options{s}) ) {
+				next;
+			}
+			else {
+				print("$file \t\033[32;1mOK\033[0m");
+			}
 		}
 		else {
-			print(" \t\033[31;1mBAD $fileCrc != $filenameCrc\033[0m");
+			if ( $status == 0 ) {
+				$status=1;
+			}
+			if ( defined($options{s}) ) {
+				next
+			}
+			else {
+				print("$file \t\033[31;1mBAD $fileCrc != $filenameCrc\033[0m");
+			}
 		}
 	}
 	else {
 		next;
 	}
 	print("\n");
-}	
+}
+exit $status;
