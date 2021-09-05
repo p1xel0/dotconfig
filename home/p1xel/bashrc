@@ -1,0 +1,83 @@
+#
+# ~/.bashrc
+#
+
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+# bash aliases
+alias ls='ls --color=auto'
+alias grep='grep --colour=auto'
+alias f="ssh p1xel@pallas.feralhosting.com"
+alias h="cd ~/Downloads/HorribleSubs/"
+alias lsd="ls -d */ 2> /dev/null"
+alias ..="cd .."
+alias a="cd '/run/media/nas/Media/Videos/TV Shows/Anime/'"
+alias d="cd ~/Downloads/"
+alias la="ls -a"
+alias l="ls -l"
+alias s="cd /run/media/storage/"
+alias gtop="watch -n 1 -t -e 'sudo pcregrep -M "'"GFX Clocks.*(\n.*)*GPU Load.*"'" /sys/kernel/debug/dri/0/amdgpu_pm_info'"
+alias m="cd /run/media/"
+alias splist="wget -qO- 'https://subsplease.org/rss/?t&r=1080' | sed 's/<link>/\n/g' | grep -o '<title>.*</title>' | tail -n +2 | sed 's/^<title>//;s/<\/title>$//;s/&amp;/\x26/g;s/&apos;/\x27/g' | tac"
+alias getmod="stat --format '%a'"
+
+PS1='\[\033[01;32m\][\u@\h\[\033[01;36m\] \w\[\033[01;32m\]]\$\[\033[00m\] '
+
+export EDITOR=vim
+
+# change other-writable files to yellow
+export LS_COLORS='ow=01;33'
+
+# disable terminal suspension
+stty -ixon
+
+# use ctrl+backspace for word deletion
+stty werase ^H
+
+#extract files
+shopt -s extglob
+extract() {
+    local c e i
+
+    (($#)) || return
+
+    for i; do
+        c=''
+        e=1
+
+        if [[ ! -r $i ]]; then
+            echo "$0: file is unreadable: \`$i'" >&2
+            continue
+        fi
+
+        case $i in
+            *.t@(gz|lz|xz|b@(2|z?(2))|a@(z|r?(.@(Z|bz?(2)|gz|lzma|xz)))))
+                   c=(bsdtar xvf);;
+            *.7z)  c=(7z x);;
+            *.Z)   c=(uncompress);;
+            *.bz2) c=(bunzip2);;
+            *.exe) c=(cabextract);;
+            *.gz)  c=(gunzip);;
+            *.rar) c=(unrar x);;
+            *.xz)  c=(unxz);;
+            *.zip) c=(unzip);;
+            *)     echo "$0: unrecognized file extension: \`$i'" >&2
+                   continue;;
+        esac
+
+        command "${c[@]}" "$i"
+        ((e = e || $?))
+    done
+    return "$e"
+}
+# Sort SubsPlease files by show name
+spsort() {
+	ls -- \[SubsPlease\]\ *.mkv &> /dev/null || return
+	local i d
+	for i in \[SubsPlease\]\ *.mkv; do
+		d="$(anititle "$i")"
+		mkdir -p "$d"
+		mv "$i" "$d"
+	done
+}

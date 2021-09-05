@@ -1,18 +1,29 @@
+artwork.cache.period 48
+artwork.enable_albumartorg 0
+artwork.enable_embedded 1
+artwork.enable_lastfm 0
+artwork.enable_localfolder 1
+artwork.enable_musicbrainz 0
+artwork.enable_wos 0
 artwork.filemask *cover*.jpg;*front*.jpg;*folder*.jpg;*cover*.png;*front*.png;*folder*.png
+artwork.missing_artwork 1
+artwork.nocover_path 
+artwork.scale_towards_longer 1
 cli_add_playlist_name Default
 close_send_to_tray 1
-deadbeef_version 1.8.4
-filechooser.lastdir file:///home/p1xel/Music/Deezloader/Anti-Flag/Their%20System%20Doesn't%20Work%20for%20You%20(Re-Mastered)
+deadbeef_version 1.8.8
+filechooser.lastdir file:///run/media/hdd/Media/Music/Deezloader/Anti-Flag/%5B2020%5D%2020_20%20Division
 gtkui.action_separators 0
-gtkui.color.bar_foreground 57311 57311 57311
+gtkui.color.bar_background 9766 12849 14392
+gtkui.color.bar_foreground 0 48316 54484
 gtkui.columns.playlist [{"title":"♫","id":"1","format":"%playstatus%","sort_format":"","size":"50","align":"0","color_override":"0","color":"#ff000000"},{"title":"Artist","id":"-1","format":"$if(%artist%,%artist%,Unknown Artist)","sort_format":"","size":"133","align":"0","color_override":"0","color":"#ffb9c3c7"},{"title":"Album","id":"-1","format":"%album%","sort_format":"","size":"149","align":"0","color_override":"0","color":"#ff000000"},{"title":"Track No","id":"-1","format":"%tracknumber%","sort_format":"","size":"68","align":"2","color_override":"0","color":"#ff000000"},{"title":"Title","id":"-1","format":"%title%","sort_format":"","size":"150","align":"0","color_override":"0","color":"#ff000000"},{"title":"Duration","id":"-1","format":"%length%","sort_format":"","size":"72","align":"0","color_override":"0","color":"#ff000000"}]
 gtkui.custom_tray_icon deadbeef_tray_icon
 gtkui.delete_files_ask 1
 gtkui.disable_seekbar_overlay 0
 gtkui.eq.visible 0
 gtkui.hide_tray_icon 1
-gtkui.layout.0.6.2 vbox expand="0 1" fill="1 1" homogeneous=0 {hbox expand="0 1 0" fill="1 1 1" homogeneous=0 {playtb {} seekbar {} volumebar {} } tabbed_playlist hideheaders=0 width=684 {} } 
-gtkui.override_bar_colors 0
+gtkui.layout.0.6.2 vbox expand="0 1" fill="1 1" homogeneous=0 {hbox expand="0 1 0" fill="1 1 0" homogeneous=0 {playtb {} waveform_seekbar {} volumebar {} } tabbed_playlist hideheaders=0 width=732 {} } 
+gtkui.override_bar_colors 1
 gtkui.override_listview_colors 0
 gtkui.override_tabstrip_colors 0
 gtkui.start_hidden 0
@@ -23,7 +34,7 @@ gtkui.titlebar_playing_tf %artist% - %title% - DeaDBeeF-%_deadbeef_version%
 gtkui.titlebar_stopped_tf DeaDBeeF-%_deadbeef_version%
 gtkui.tray_volume_sensitivity 1
 gtkui.unicode_playstate 0
-gui_plugin GTK2
+gui_plugin GTK3
 hotkey.key01 "Ctrl f" 0 0 find
 hotkey.key02 "Ctrl o" 0 0 open_files
 hotkey.key03 "Ctrl q" 0 0 quit
@@ -56,16 +67,15 @@ hotkey.key29 "XF86AudioNext" 0 1 next
 hotkey.key30 "n" 0 0 playback_random
 hotkey.key31 "Ctrl k" 0 0 toggle_stop_after_album
 hotkey.key32 "Super c" 0 1 toggle_player_window
-hotkey.key33 "Hangul_Hanja" 0 1 toggle_player_window
 hotkeys_created 1
 logwindow.geometry.h 200
 logwindow.geometry.w 400
-logwindow.geometry.x 40
+logwindow.geometry.x 34
 logwindow.geometry.y 40
-mainwin.geometry.h 507
-mainwin.geometry.w 684
-mainwin.geometry.x 596
-mainwin.geometry.y 360
+mainwin.geometry.h 460
+mainwin.geometry.w 732
+mainwin.geometry.x 788
+mainwin.geometry.y 274
 network.proxy.port 8080
 notify.albumart 1
 notify.albumart_size 64
@@ -75,19 +85,25 @@ notify.format_title_tf %title%
 output_plugin alsa
 playback.loop 1
 playback.volume 0.0000000
-playlist.current 0
-playlist.cursor.0 8
-playlist.scroll.0 -8
+playlist.current 3
+playlist.cursor.0 16
+playlist.cursor.1 0
+playlist.cursor.2 0
+playlist.cursor.3 0
+playlist.scroll.0 -16
+playlist.scroll.1 0
+playlist.scroll.2 0
+playlist.scroll.3 0
 playlist.scroll.cursorfollowplayback 1
 playlist.tab.00000 Default
 prefwin.geometry.h 593
 prefwin.geometry.w 686
-prefwin.geometry.x 960
-prefwin.geometry.y 263
+prefwin.geometry.x 284
+prefwin.geometry.y 51
 resume.paused 0
-resume.playlist 0
-resume.position 98.731658
-resume.track 8
+resume.playlist -1
+resume.position -1.000000
+resume.track -1
 resume_last_session 0
 streamer.override_samplerate 0
 streamer.samplerate 44100
@@ -98,3 +114,39 @@ trkproperties.geometry.h 400
 trkproperties.geometry.w 400
 trkproperties.geometry.x 625
 trkproperties.geometry.y 478
+waveform.bg_alpha 65535
+waveform.bg_color_b 14392
+waveform.bg_color_g 12849
+waveform.bg_color_r 9766
+waveform.border_width 1
+waveform.cache_enabled 1
+waveform.cursor_width 3
+waveform.display_rms 1
+waveform.display_ruler 0
+waveform.fg_alpha 65535
+waveform.fg_color_b 21845
+waveform.fg_color_g 20560
+waveform.fg_color_r 17990
+waveform.fg_rms_alpha 65535
+waveform.fg_rms_color_b 5000
+waveform.fg_rms_color_g 5000
+waveform.fg_rms_color_r 5000
+waveform.fill_waveform 1
+waveform.font_size 18
+waveform.log_enabled 0
+waveform.max_file_length 180
+waveform.mix_to_mono 0
+waveform.num_samples 2048
+waveform.pb_alpha 34492
+waveform.pb_color_b 54484
+waveform.pb_color_g 48316
+waveform.pb_color_r 0
+waveform.refresh_interval 33
+waveform.render_method 1
+waveform.rlr_alpha 65535
+waveform.rlr_color_b 0
+waveform.rlr_color_g 0
+waveform.rlr_color_r 0
+waveform.scroll_enabled 1
+waveform.shade_waveform 0
+waveform.soundcloud_style 0

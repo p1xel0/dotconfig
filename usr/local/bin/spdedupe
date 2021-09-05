@@ -1,0 +1,21 @@
+#!/bin/bash
+ls -- \[SubsPlease\]\ *.mkv &> /dev/null || { echo -e "\033[1m\033[31merror: no SubsPlease files in current directory\033[0m"; exit 1; }
+mapfile -t dir < <(ls \[SubsPlease\]\ *.mkv)
+mapfile -t files < <(printf '%s\n' "${dir[@]}" | sed -E 's/ .[[:xdigit:]]{8}.\.mkv//;s/(.*) .*$/\1/;s/(.*)v.*$/\1/;s/\[/\\[/g' | awk '!NF || !seen[$0]++')
+mapfile -t new_versions < <(for ((i=0;i<"${#files[@]}";i++)); do for ((f=9;f>1;f--)); do if printf '%s\n' "${dir[@]}" | grep "${files[$i]}"v"$f"\ ; then break; fi; done; done)
+if [ ${#new_versions[@]} -eq 0 ]; then
+	exit 0
+fi
+mapfile -t files < <(printf '%s\n' "${new_versions[@]}" | sed -E 's/ .[[:xdigit:]]{8}.\.mkv//;s/(.*) .*$/\1/;s/(.*)v.*$/\1/;s/\[/\\[/g')
+not_updated=("${dir[@]}")
+for i in "${files[@]}"; do
+	mapfile -t not_updated < <(printf '%s\n' "${not_updated[@]}" | grep -v -- "$i")
+done
+mapfile -t new_versions < <(printf '%s\n' "${not_updated[@]}" "${new_versions[@]}" | sort)
+mapfile -t new_versions < <(printf '%s\n' "${new_versions[@]}" | sed 's/\[/\\[/g')
+for i in "${new_versions[@]}"; do
+	mapfile -t dir < <(printf '%s\n' "${dir[@]}" | grep -v -- "$i")
+done
+for i in "${dir[@]}"; do
+	echo "$i"; rm "$i"
+done

@@ -1,7 +1,5 @@
 #!/usr/bin/perl -w
-# Modifed version of crc32 included in perl-archive-zip
-# Depends on perl-archive-zip obviously
-# Recursively checks the CRC32 hash of files that contain a hash in the filename 
+# Checks the CRC32 hash of files that contain a hash in the filename
 
 use 5.006;
 use strict;
@@ -10,6 +8,7 @@ use File::Find;
 use FileHandle;
 use Getopt::Std;
 use File::Basename;
+use Term::ANSIColor;
 
 $Getopt::Std::STANDARD_HELP_VERSION = 1;
 
@@ -22,12 +21,13 @@ Usage: $name [OPTION]... [FILE]...
   -q                don't print OK for each successfully verified file
   -s                don't output anything, status code shows success
   -r                recursivly check all files containing a CRC32 hash
+  -d                disable colorized output
 $name $VERSION on perl $^V
 EOF
 exit}
 
 my %options=();
-getopts('hqsr', \%options);
+getopts('hqsrd', \%options);
 VERSION_MESSAGE if defined $options{h};
 VERSION_MESSAGE if ! @ARGV && ! $options{r};
 
@@ -47,10 +47,40 @@ else {
 
 foreach my $file (@sorted_files) {
 	if ( -d $file ) {
-		next;
+		if ( $status == 0 ) {
+			$status=1;
+		}
+		if ( defined($options{s}) || defined($options{r}) ) {
+			next;
+		}
+		else {
+			print STDERR ("$name: $file: Is a directory\n");
+			next;
+		}
+	}
+	if ( ! -e "$file" ) {
+		if ( $status == 0 ) {
+			$status=1;
+		}
+		if ( defined($options{s}) ) {
+			next;
+		}
+		else {
+			print STDERR ("$name: $file: No such file or directory\n");
+			next;
+		}
 	}
 	if ( !$fh->open( $file, 'r' ) ) {
-		next;
+		if ( $status == 0 ) {
+			$status=1;
+		}
+		if ( defined($options{s}) ) {
+			next;
+		}
+		else {
+			print STDERR ("$name: $file: Permission denied\n");
+			next;
+		}
 	}
 	if ( $file =~ /[^[:xdigit:]]([[:xdigit:]]{8})[^[:xdigit:]]/ ) {
 		binmode($fh);
@@ -67,7 +97,12 @@ foreach my $file (@sorted_files) {
 				next;
 			}
 			else {
-				print("$file \t\033[32;1mOK\033[0m");
+				if ( defined($options{d}) ) {
+					print("$file \tOK");
+				}	
+				else {
+					print("$file \t",color('green bold'),"OK",color('reset'));
+				}
 			}
 		}
 		else {
@@ -75,10 +110,15 @@ foreach my $file (@sorted_files) {
 				$status=1;
 			}
 			if ( defined($options{s}) ) {
-				next
+				next;
 			}
 			else {
-				print("$file \t\033[31;1mBAD $fileCrc != $filenameCrc\033[0m");
+				if ( defined($options{d}) ) {
+					print("$file \tBAD $fileCrc != $filenameCrc");
+				}
+				else {
+					print("$file \t",color('red bold'),"BAD $fileCrc != $filenameCrc",color('reset'));
+				}
 			}
 		}
 	}

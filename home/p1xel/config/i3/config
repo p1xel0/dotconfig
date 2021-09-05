@@ -64,11 +64,56 @@ bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
 bindsym $mod+Ctrl+Escape exec --no-startup-id displaytoggle
 
 # Macropad
-bindsym XF86Open exec --no-startup-id displaytoggle
-bindsym Hiragana_Katakana exec --no-startup-id discord
-bindsym Henkan_Mode exec firefox
-# bindsym Hangul_Hanja ##assigned as deadbeef hotkey##
-bindsym Muhenkan exec --no-startup-id steam
+## R1
+#bindsym XF86AudioPlay
+#bindsym XF86AudioPrev
+#bindsym XF86AudioNext
+#bindsym XF86AudioMute
+## R2
+bindsym Hangul_Hanja exec firefox
+bindsym Hangul exec kitty bash -c ranger
+bindsym Cancel exec --no-startup-id steam
+bindsym XF86Copy exec --no-startup-id discord
+## R3
+#bindsym Muhenkan
+#bindsym Henkan_Mode
+#bindsym Hiragana_Katakana
+#bindsym XF86Paste
+## R4
+#bindsym XF86Open
+#bindsym Help
+#bindsym SunFront
+#bindsym Redo
+## R5
+#bindsym XF86Tools
+#bindsym XF86Launch5
+#bindsym XF86Launch6
+#bindsym XF86Launch7
+## R6
+#bindsym XF86Launch8
+#bindsym XF86Launch9
+#bindsym XF86Cut
+#bindsym XF86AudioMicMute
+## R7
+#bindsym XF86TouchpadToggle
+#bindsym XF86TouchpadOn
+#bindsym XF86TouchpadOff
+#bindsym Undo
+## R8
+bindsym XF86Search exec --no-startup-id gtakill
+bindsym XF86HomePage exec --no-startup-id test
+bindsym XF86Back exec --no-startup-id test
+bindsym XF86Forward exec --no-startup-id displaytoggle
+## R9
+bindsym XF86Explorer exec --no-startup-id test
+bindsym XF86Reload exec --no-startup-id test
+bindsym XF86Favorites exec --no-startup-id test
+bindsym XF86MonBrightnessUp exec --no-startup-id brightcontrol up
+## R10
+bindsym XF86Calculator exec --no-startup-id i3-scrot
+bindsym XF86Mail --release exec --no-startup-id i3-scrot -u
+bindsym Find --release exec --no-startup-id i3-scrot -s -f
+bindsym XF86MonBrightnessDown exec --no-startup-id brightcontrol down
 
 # focus_follows_mouse no
 

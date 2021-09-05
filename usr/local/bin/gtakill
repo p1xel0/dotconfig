@@ -1,0 +1,5 @@
+#!/bin/bash
+pid=$(pgrep GTA5.exe)
+if [ -n "$pid" ]; then 
+	kill -9 "$pid"
+fi
