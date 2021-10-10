@@ -12,7 +12,7 @@ artwork.scale_towards_longer 1
 cli_add_playlist_name Default
 close_send_to_tray 1
 deadbeef_version 1.8.8
-filechooser.lastdir file:///run/media/hdd/Media/Music/Deezloader/Anti-Flag/%5B2020%5D%2020_20%20Division
+filechooser.lastdir file:///run/media/hdd/Media/Music/Deezloader/Poison%20Idea/Feel%20the%20Darkness%20(2018%20Reissue)/CD1
 gtkui.action_separators 0
 gtkui.color.bar_background 9766 12849 14392
 gtkui.color.bar_foreground 0 48316 54484
@@ -75,7 +75,7 @@ logwindow.geometry.y 40
 mainwin.geometry.h 460
 mainwin.geometry.w 732
 mainwin.geometry.x 788
-mainwin.geometry.y 274
+mainwin.geometry.y 331
 network.proxy.port 8080
 notify.albumart 1
 notify.albumart_size 64
@@ -84,13 +84,13 @@ notify.format_content_tf %album%\\n%artist%
 notify.format_title_tf %title%
 output_plugin alsa
 playback.loop 1
-playback.volume 0.0000000
+playback.volume -1.000000
 playlist.current 3
-playlist.cursor.0 16
+playlist.cursor.0 31
 playlist.cursor.1 0
 playlist.cursor.2 0
 playlist.cursor.3 0
-playlist.scroll.0 -16
+playlist.scroll.0 651
 playlist.scroll.1 0
 playlist.scroll.2 0
 playlist.scroll.3 0
@@ -131,7 +131,7 @@ waveform.fg_rms_alpha 65535
 waveform.fg_rms_color_b 5000
 waveform.fg_rms_color_g 5000
 waveform.fg_rms_color_r 5000
-waveform.fill_waveform 1
+waveform.fill_waveform 0
 waveform.font_size 18
 waveform.log_enabled 0
 waveform.max_file_length 180
