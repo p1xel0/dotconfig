@@ -12,7 +12,7 @@ artwork.scale_towards_longer 1
 cli_add_playlist_name Default
 close_send_to_tray 1
 deadbeef_version 1.8.8
-filechooser.lastdir file:///run/media/hdd/Media/Music/Deezloader/Poison%20Idea/Feel%20the%20Darkness%20(2018%20Reissue)/CD1
+filechooser.lastdir file:///run/media/hdd/Media/Music/Deezloader/L.O.C,%20Choking%20V.%20&%20The%20Crack%20Rock%20Steady%20Familly/No%20Cash%20-%20Run%20Your%20Pockets
 gtkui.action_separators 0
 gtkui.color.bar_background 9766 12849 14392
 gtkui.color.bar_foreground 0 48316 54484
@@ -101,9 +101,9 @@ prefwin.geometry.w 686
 prefwin.geometry.x 284
 prefwin.geometry.y 51
 resume.paused 0
-resume.playlist -1
-resume.position -1.000000
-resume.track -1
+resume.playlist 0
+resume.position 0.0464399
+resume.track 5
 resume_last_session 0
 streamer.override_samplerate 0
 streamer.samplerate 44100
