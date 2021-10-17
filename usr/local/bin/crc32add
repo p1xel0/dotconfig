@@ -32,6 +32,15 @@ foreach my $file (@ARGV) {
        	}
 	my $filecrc = uc sprintf( "%08x", $crc );
       	(my $filename = $file) =~ s/\.[^.]+$//;
-	my $filenamecrc = sprintf( "$filename\[$filecrc]$suffix" );
-	move( $file, $filenamecrc ) and print("Renamed $file => $filenamecrc\n") or warn "$0: 	Cannot rename $file: $!\n";
+	my $filenamecrc;
+	if ( $filename !~ / / and $filename =~ /\./ ) {
+		$filenamecrc = sprintf( "$filename\.\[$filecrc]$suffix" );
+	}
+	elsif ( $filename =~ /\)$/ or $filename =~ /[a-zA-Z0-9]$/ ) {
+		$filenamecrc = sprintf( "$filename \[$filecrc]$suffix" );
+	}
+	else {
+		$filenamecrc = sprintf( "$filename\[$filecrc]$suffix" );
+	}
+	move( $file, $filenamecrc ) and print("$file => $filenamecrc\n") or warn "$0: 	Cannot rename $file: $!\n";
 }
