@@ -12,7 +12,7 @@ artwork.scale_towards_longer 1
 cli_add_playlist_name Default
 close_send_to_tray 1
 deadbeef_version 1.8.8
-filechooser.lastdir file:///run/media/hdd/Media/Music/Deezloader/Atrocity%20Solution/Melodies%20for%20a%20Massacre
+filechooser.lastdir file:///run/media/hdd/Media/Music/Deezloader/Planet%20trash/%5B2017%5D%20Feel%20The%20Darkness%20Vol%202
 gtkui.action_separators 0
 gtkui.color.bar_background 9766 12849 14392
 gtkui.color.bar_foreground 0 48316 54484
@@ -86,11 +86,11 @@ output_plugin alsa
 playback.loop 1
 playback.volume -1.000000
 playlist.current 3
-playlist.cursor.0 31
+playlist.cursor.0 -1
 playlist.cursor.1 0
 playlist.cursor.2 0
 playlist.cursor.3 0
-playlist.scroll.0 651
+playlist.scroll.0 -1
 playlist.scroll.1 0
 playlist.scroll.2 0
 playlist.scroll.3 0
@@ -103,7 +103,7 @@ prefwin.geometry.y 51
 resume.paused 0
 resume.playlist 0
 resume.position 0.0464399
-resume.track 13
+resume.track 26
 resume_last_session 0
 streamer.override_samplerate 0
 streamer.samplerate 44100
