@@ -103,7 +103,7 @@ prefwin.geometry.y 51
 resume.paused 0
 resume.playlist 0
 resume.position 0.0464399
-resume.track 26
+resume.track 40
 resume_last_session 0
 streamer.override_samplerate 0
 streamer.samplerate 44100
