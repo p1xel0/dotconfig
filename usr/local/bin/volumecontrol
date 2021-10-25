@@ -29,22 +29,9 @@ elif [ "$1" = "mute" ]; then
 	pactl set-sink-mute "$sink" toggle
 	muted=$(pacmd list-sinks | grep -A 15 '* index' | awk '/muted:/{ print $2 }')
 	if [ "$muted" = "yes" ]; then
-		notify-send.sh -i audio-volume-muted -t 1000 -h string:synchronous:volume -t 1000 -f 'Volume: muted'
+		dunstify -i audio-volume-muted -t 1000 -h string:synchronous:volume -t 1000 -f 'Volume: muted'
 		exit 0
 	fi
 fi
 curvol="$(pacmd list-sinks | grep -A 15 '* index' | awk '/volume: front/{ print substr($5, 1, length($5)-1 ) }')"
-if [ "$curvol" -gt 0 ]; then
-	if [ "${#curvol}" -ge 2 ]; then
-		for ((i=0;i<"${curvol:: -1}";i++)); do
-			slider+="█"
-		done
-	fi
-	if [ "${curvol: -1}" -gt 0 ]; then
-	        slider+="░"
-	fi
-fi
-while [ "${#slider}" -lt 10 ]; do
-	slider+="─"
-done
-notify-send.sh -i audio-volume-high -t 1000 -h string:synchronous:volume -f "Volume: $curvol% │$slider│"
+dunstify -i audio-volume-high -t 1000 -h string:x-canonical-private-synchronous:volume -h int:value:"$curvol" "Volume: $curvol%"
