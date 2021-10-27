@@ -12,7 +12,7 @@ artwork.scale_towards_longer 1
 cli_add_playlist_name Default
 close_send_to_tray 1
 deadbeef_version 1.8.8
-filechooser.lastdir file:///run/media/hdd/Media/Music/Deezloader/Bad%20Religion/%5B2012%5D%20New%20Maps%20Of%20Hell
+filechooser.lastdir file:///run/media/hdd/Media/Music/Deezloader/Bad%20Cop_Bad%20Cop/Not%20Sorry
 gtkui.action_separators 0
 gtkui.color.bar_background 9766 12849 14392
 gtkui.color.bar_foreground 0 48316 54484
@@ -74,7 +74,7 @@ logwindow.geometry.x 34
 logwindow.geometry.y 40
 mainwin.geometry.h 460
 mainwin.geometry.w 732
-mainwin.geometry.x 2708
+mainwin.geometry.x 788
 mainwin.geometry.y 331
 network.proxy.port 8080
 notify.albumart 1
@@ -104,7 +104,7 @@ replaygain.preamp_with_rg 0.0000000
 replaygain.processing_flags 0
 resume.paused 0
 resume.playlist 0
-resume.position 0.0928798
+resume.position 0.0464399
 resume.track 2
 resume_last_session 0
 streamer.16_to_24 0

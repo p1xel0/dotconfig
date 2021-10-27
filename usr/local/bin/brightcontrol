@@ -26,10 +26,4 @@ else
 	cur_brightness="$(echo "$cur_brightness"*100 | bc)"
 fi
 cur_brightness=${cur_brightness%.*}
-for ((i=0;i<"${cur_brightness:: -1}";i++)); do
-	slider+="█"
-done
-while [ "${#slider}" -lt 10 ]; do
-	slider+="─"
-done
-notify-send.sh -i weather-clear -t 1000 -h string:synchronous:brightness -f "Brightness: $cur_brightness% │$slider│"
+dunstify -i weather-clear -t 1000 -h string:x-canonical-private-synchronous:volume -h int:value:"$cur_brightness" "Brightness: $cur_brightness%"
