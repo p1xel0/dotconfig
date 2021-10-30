@@ -12,7 +12,7 @@ artwork.scale_towards_longer 1
 cli_add_playlist_name Default
 close_send_to_tray 1
 deadbeef_version 1.8.8
-filechooser.lastdir file:///run/media/hdd/Media/Music/Deezloader/Bad%20Cop_Bad%20Cop/Not%20Sorry
+filechooser.lastdir file:///run/media/hdd/Media/Music/Deezloader/Atrocity%20Solution/Melodies%20for%20a%20Massacre
 gtkui.action_separators 0
 gtkui.color.bar_background 9766 12849 14392
 gtkui.color.bar_foreground 0 48316 54484
@@ -105,7 +105,7 @@ replaygain.processing_flags 0
 resume.paused 0
 resume.playlist 0
 resume.position 0.0464399
-resume.track 2
+resume.track 3
 resume_last_session 0
 streamer.16_to_24 0
 streamer.override_samplerate 0
