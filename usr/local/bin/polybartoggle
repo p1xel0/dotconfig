@@ -1,0 +1,7 @@
+#!/bin/bash
+polybar_state="$(xprop -name polybar-main_DisplayPort-0 | awk '/window state: /{ print $3 }')"
+if [ "$polybar_state" = 'Withdrawn' ]; then
+	xdo show -N Polybar
+else	
+	xdo hide -N Polybar
+fi
