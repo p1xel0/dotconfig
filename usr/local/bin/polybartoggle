@@ -1,7 +1,8 @@
 #!/bin/bash
-polybar_state="$(xprop -name polybar-main_DisplayPort-0 | awk '/window state: /{ print $3 }')"
-if [ "$polybar_state" = 'Withdrawn' ]; then
-	xdo show -N Polybar
-else	
+polybar_state_1="$(xprop -name polybar-main_DisplayPort-0 | awk '/window state: /{ print $3 }')"
+polybar_state_2="$(xprop -name polybar-alt_HDMI-A-0 | awk '/window state: /{ print $3 }')"
+if [ "$polybar_state_1" = 'Normal' ] || [ "$polybar_state_2" = 'Normal' ]; then
 	xdo hide -N Polybar
+else	
+	xdo show -N Polybar
 fi
