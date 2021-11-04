@@ -36,7 +36,7 @@ foreach my $file (@ARGV) {
 	if ( $filename !~ / / and $filename =~ /\./ ) {
 		$filenamecrc = sprintf( "$filename\.\[$filecrc]$suffix" );
 	}
-	elsif ( $filename =~ /\)$/ or $filename =~ /[a-zA-Z0-9]$/ ) {
+	elsif ( $filename =~ /\)$/ or $filename =~ /[a-zA-Z0-9!?]$/ ) {
 		$filenamecrc = sprintf( "$filename \[$filecrc]$suffix" );
 	}
 	else {
