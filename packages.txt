@@ -91,6 +91,7 @@ freetype2
 fribidi
 fuse-common
 fuse2
+gamemode
 gawk
 gc
 gcc
@@ -172,6 +173,7 @@ ldns
 less
 lib32-alsa-lib
 lib32-alsa-plugins
+lib32-brotli
 lib32-bzip2
 lib32-curl
 lib32-e2fsprogs
@@ -322,9 +324,11 @@ libsm
 libsndfile
 libsodium
 libsoup
+libsoup3
 libsoxr
 libssh
 libssh2
+libstemmer
 libtasn1
 libteam
 libthai
@@ -351,6 +355,7 @@ libxcb
 libxcomposite
 libxcrypt
 libxcursor
+libxcvt
 libxdamage
 libxdg-basedir
 libxdmcp
@@ -468,6 +473,7 @@ picom
 pinentry
 pixman
 pkgconf
+pngcrush
 polkit
 polkit-gnome
 polybar
@@ -486,14 +492,9 @@ python-attrs
 python-docopt
 python-gobject
 python-keyutils
-python-more-itertools
 python-mutagen
-python-ordered-set
-python-packaging
 python-pillow
-python-pycryptodome
-python-pyparsing
-python-setuptools
+python-pycryptodomex
 python-six
 python-websockets
 python-xlib
@@ -539,6 +540,7 @@ tdb
 texinfo
 thin-provisioning-tools
 tinyxml2
+tracker3
 tslib
 ttf-bitstream-vera
 ttf-liberation
@@ -566,7 +568,6 @@ vulkan-icd-loader
 vulkan-radeon
 wavpack
 wayland
-wayland-protocols
 webkit2gtk
 webrtc-audio-processing
 wget
@@ -587,6 +588,7 @@ xcb-util-wm
 xcb-util-xrm
 xdg-dbus-proxy
 xdg-utils
+xdo
 xdotool
 xf86-input-libinput
 xf86-video-amdgpu
@@ -613,8 +615,7 @@ xz
 yajl
 yasm
 yay
-yt-dlp-drop-in
-yt-dlp-git
+yt-dlp
 zenity
 zeromq
 zimg
