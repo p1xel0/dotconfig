@@ -105,7 +105,7 @@ replaygain.processing_flags 0
 resume.paused 0
 resume.playlist 0
 resume.position 0.0928798
-resume.track 6
+resume.track 9
 resume_last_session 0
 streamer.16_to_24 0
 streamer.override_samplerate 0
