@@ -2,7 +2,7 @@
 if pidof -x "$(basename "$0")" -o $$ > /dev/null; then
 	exit 0
 fi
-sink=$(pacmd list-sinks | awk '/\* index:/{ print $3 }')
+sink=$(pactl info | awk '/Default Sink: /{ print $3 }')
 if [[ "$1" =~ ^[0-9]+$ ]]; then
 	if [ "$1" -gt 100 ]; then
 		setvol=100
@@ -12,7 +12,7 @@ if [[ "$1" =~ ^[0-9]+$ ]]; then
 	pactl set-sink-volume "$sink" "$setvol"%
 elif [ "$1" = "up" ] && [[ "$2" =~ ^[0-9]+$ ]]; then
 	setvol="$2"
-	curvol="$(pacmd list-sinks | grep -A 15 '* index' | awk '/volume: front/{ print substr($5, 1, length($5)-1 ) }')"
+	curvol="$(pactl get-sink-volume "$sink" | awk 'NR == 1 { print substr($5, 1, length($5)-1 )}')"
 	if [ "$curvol" -lt 100 ]; then
 		if [ "$setvol" -gt 100 ]; then
 			setvol=100
@@ -27,11 +27,11 @@ elif [ "$1" = "down" ] && [[ "$2" =~ ^[0-9]+$ ]]; then
 	pactl set-sink-volume "$sink" -"$setvol"%
 elif [ "$1" = "mute" ]; then
 	pactl set-sink-mute "$sink" toggle
-	muted=$(pacmd list-sinks | grep -A 15 '* index' | awk '/muted:/{ print $2 }')
+	muted=$(pactl get-sink-mute "$sink" | awk '{ print $2 }')
 	if [ "$muted" = "yes" ]; then
 		notify-send.sh -i audio-volume-muted -t 1000 -h string:synchronous:volume -t 1000 -f 'Volume: muted'
 		exit 0
 	fi
 fi
-curvol="$(pacmd list-sinks | grep -A 15 '* index' | awk '/volume: front/{ print substr($5, 1, length($5)-1 ) }')"
+curvol="$(pactl get-sink-volume "$sink" | awk 'NR == 1 { print substr($5, 1, length($5)-1 )}')"
 notify-send.sh -i audio-volume-high -t 1000 -h string:synchronous:volume -h int:value:"$curvol" -f "Volume: $curvol%"

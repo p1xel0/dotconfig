@@ -1,7 +1,7 @@
 #!/bin/bash
-state="$(pactl list cards | grep -A25 'Name: alsa_card.usb-JDS_Labs_JDS_Labs_Element_II-00' | awk '/Active Profile: /{ print $3 }')"
-if [ "$state" = 'output:analog-stereo' ]; then
-	pactl set-card-profile alsa_card.usb-JDS_Labs_JDS_Labs_Element_II-00 off
+sink=$(pactl info | awk '/Default Sink: /{ print $3 }')
+if [ "$sink" = 'alsa_output.usb-JDS_Labs_JDS_Labs_Element_II-00.analog-stereo' ]; then
+	pactl set-default-sink alsa_output.pci-0000_2d_00.3.analog-stereo
 else
-	pactl set-card-profile alsa_card.usb-JDS_Labs_JDS_Labs_Element_II-00 output:analog-stereo
+	pactl set-default-sink alsa_output.usb-JDS_Labs_JDS_Labs_Element_II-00.analog-stereo
 fi

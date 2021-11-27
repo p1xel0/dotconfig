@@ -12,7 +12,7 @@ artwork.scale_towards_longer 1
 cli_add_playlist_name Default
 close_send_to_tray 1
 deadbeef_version 1.8.8
-filechooser.lastdir file:///run/media/hdd/Media/Music/Deezloader/Jello%20Biafra/White%20People%20and%20the%20Damage%20Done
+filechooser.lastdir file:///run/media/hdd/Media/Music/The%20Dead%20Milkmen/Stoney's%20Extra%20Stout%20%5BPig%5D
 gtkui.action_separators 0
 gtkui.color.bar_background 9766 12849 14392
 gtkui.color.bar_foreground 0 48316 54484
@@ -104,8 +104,8 @@ replaygain.preamp_with_rg 0.0000000
 replaygain.processing_flags 0
 resume.paused 0
 resume.playlist 0
-resume.position 0.0928798
-resume.track 9
+resume.position 0.0000000
+resume.track 0
 resume_last_session 0
 streamer.16_to_24 0
 streamer.override_samplerate 0

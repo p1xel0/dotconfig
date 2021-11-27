@@ -2,6 +2,7 @@ acl
 adapta-gtk-theme
 adobe-source-code-pro-fonts
 adwaita-icon-theme
+alsa-card-profiles
 alsa-lib
 alsa-plugins
 alsa-topology-conf
@@ -233,6 +234,7 @@ libatasmart
 libavc1394
 libblockdev
 libbluray
+libbsd
 libbytesize
 libcaca
 libcanberra
@@ -259,8 +261,10 @@ libepoxy
 libev
 libevdev
 libevent
+libfdk-aac
 libffi
 libfontenc
+libfreeaptx
 libgcrypt
 libglvnd
 libgpg-error
@@ -276,10 +280,12 @@ libinih
 libinput
 libjpeg-turbo
 libksba
+libldac
 libldap
 libmad
 libmanette
 libmatroska
+libmd
 libmediainfo
 libmfx
 libmicrohttpd
@@ -338,6 +344,7 @@ libtirpc
 libtool
 libunistring
 libunwind
+liburcu
 libusb
 libuv
 libva
@@ -403,6 +410,8 @@ mailcap
 make
 man-db
 man-pages
+mangohud
+mangohud-common
 md4c
 mdadm
 mediainfo
@@ -471,6 +480,10 @@ perl-rename
 perl-timedate
 picom
 pinentry
+pipewire
+pipewire-alsa
+pipewire-media-session
+pipewire-pulse
 pixman
 pkgconf
 pngcrush
@@ -484,7 +497,6 @@ popt
 procps-ng
 psmisc
 pugixml
-pulseaudio
 pulseaudio-alsa
 python
 python-appdirs
@@ -514,6 +526,7 @@ rsync
 rtkit
 rubberband
 s-nail
+sbc
 scrot
 sdl2
 sed
