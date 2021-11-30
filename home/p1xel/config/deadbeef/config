@@ -12,7 +12,7 @@ artwork.scale_towards_longer 1
 cli_add_playlist_name Default
 close_send_to_tray 1
 deadbeef_version 1.8.8
-filechooser.lastdir file:///run/media/hdd/Media/Music/The%20Dead%20Milkmen/Stoney's%20Extra%20Stout%20%5BPig%5D
+filechooser.lastdir file:///run/media/hdd/Media/Music/Dayglo%20Abortions/Two%20Dogs%20Fucking%20-%20Deux%20Chiens%20Fourrent%20%5B2008%5D
 gtkui.action_separators 0
 gtkui.color.bar_background 9766 12849 14392
 gtkui.color.bar_foreground 0 48316 54484
@@ -74,8 +74,8 @@ logwindow.geometry.x 34
 logwindow.geometry.y 40
 mainwin.geometry.h 460
 mainwin.geometry.w 732
-mainwin.geometry.x 788
-mainwin.geometry.y 331
+mainwin.geometry.x 589
+mainwin.geometry.y 397
 network.proxy.port 8080
 notify.albumart 1
 notify.albumart_size 64
@@ -86,11 +86,11 @@ output_plugin alsa
 playback.loop 1
 playback.volume -1.000000
 playlist.current 3
-playlist.cursor.0 -1
+playlist.cursor.0 0
 playlist.cursor.1 0
 playlist.cursor.2 0
 playlist.cursor.3 0
-playlist.scroll.0 -1
+playlist.scroll.0 0
 playlist.scroll.1 0
 playlist.scroll.2 0
 playlist.scroll.3 0
@@ -105,7 +105,7 @@ replaygain.processing_flags 0
 resume.paused 0
 resume.playlist 0
 resume.position 0.0000000
-resume.track 0
+resume.track 1
 resume_last_session 0
 streamer.16_to_24 0
 streamer.override_samplerate 0

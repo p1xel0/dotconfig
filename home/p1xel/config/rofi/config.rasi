@@ -1,6 +1,6 @@
 configuration {
 	modi: "run";
-	theme: "adapta";
 	font: "Noto 12";
 	disable-history: true;
 }
+@theme "adapta"
