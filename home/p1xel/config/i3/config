@@ -237,7 +237,8 @@ for_window [class="Lxappearance"] floating enable sticky enable border normal
 for_window [class="Deadbeef"] floating enable
 for_window [class="Nitrogen"] floating enable sticky enable border normal
 for_window [class="Pavucontrol"] floating enable border normal
-for_window [class="mpv"] floating enable 
+for_window [class="mpv"] floating enable
+for_window [class="Viewnior"] floating enable 
 
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus
