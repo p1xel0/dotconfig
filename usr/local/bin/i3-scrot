@@ -1,17 +1,28 @@
 #!/bin/bash
+if pidof -x "$(basename "$0")" -o $$ > /dev/null; then
+	exit 0
+fi
 if [ ! -d ~/Pictures/ ]; then
 	mkdir -p ~/Pictures/
 fi
-cd ~/Pictures/
-if [ -z "$@" ]; then
-	eval $(xdotool getmouselocation --shell)
+cd ~/Pictures/ || exit 1
+if [ -z "$*" ]; then
+	eval "$(xdotool getmouselocation --shell)"
 	if [ "$X" -lt 1920 ]; then
-		scrot -a 0,0,1920,1080
+		scrot -q 100 ~/Pictures/'%Y-%m-%d-%H%M%S_$wx$h.png' -e 'pngcrush -ow $f' -a 0,0,1920,1080 &
 	else
-		scrot -a 1920,0,1920,1080		
+		scrot -q 100 ~/Pictures/'%Y-%m-%d-%H%M%S_$wx$h.png' -e 'pngcrush -ow $f' -a 1920,0,1920,1080 &
 	fi
 else
-	scrot "$@"
+	scrot -q 100 ~/Pictures/'%Y-%m-%d-%H%M%S_$wx$h.png' -e 'pngcrush -ow $f' "$@" &
 fi
-sleep 1
-notify-send 'screenshot has been saved in ~/Pictures/'
+scrot_pid="$!"
+while true; do
+	if ps -p $scrot_pid > /dev/null; then
+		notify-send.sh -i '/usr/share/icons/Papirus-Dark/16x16/actions/view-preview.svg' -t 1500 -h string:synchronous:scrot -f 'Compressing Screenshot...' 
+		sleep 1
+	else
+		break
+	fi
+done
+notify-send.sh -i '/usr/share/icons/Papirus-Dark/16x16/actions/view-preview.svg' -t 4000 -h string:synchronous:scrot -f 'Saved Screenshot to ~/Pictures/'
