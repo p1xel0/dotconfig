@@ -103,9 +103,9 @@ prefwin.geometry.y 103
 replaygain.preamp_with_rg 0.0000000
 replaygain.processing_flags 0
 resume.paused 0
-resume.playlist -1
-resume.position -1.000000
-resume.track -1
+resume.playlist 0
+resume.position 0.0464399
+resume.track 1
 resume_last_session 0
 streamer.16_to_24 0
 streamer.override_samplerate 0
