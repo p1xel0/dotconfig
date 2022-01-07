@@ -12,7 +12,7 @@ artwork.scale_towards_longer 1
 cli_add_playlist_name Default
 close_send_to_tray 1
 deadbeef_version 1.8.8
-filechooser.lastdir file:///run/media/hdd/Media/Music/Against%20All%20Authority/Destroy%20What%20Destroys%20You
+filechooser.lastdir file:///run/media/hdd/Media/Music/The%20Distillers/Sing%20Sing%20Death%20House
 gtkui.action_separators 0
 gtkui.color.bar_background 9766 12849 14392
 gtkui.color.bar_foreground 0 48316 54484
@@ -74,8 +74,8 @@ logwindow.geometry.x 34
 logwindow.geometry.y 40
 mainwin.geometry.h 460
 mainwin.geometry.w 732
-mainwin.geometry.x 589
-mainwin.geometry.y 397
+mainwin.geometry.x 958
+mainwin.geometry.y 135
 network.proxy.port 8080
 notify.albumart 1
 notify.albumart_size 64
@@ -105,7 +105,7 @@ replaygain.processing_flags 0
 resume.paused 0
 resume.playlist 0
 resume.position 0.0464399
-resume.track 1
+resume.track 5
 resume_last_session 0
 streamer.16_to_24 0
 streamer.override_samplerate 0
