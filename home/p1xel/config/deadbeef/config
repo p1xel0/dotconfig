@@ -12,7 +12,7 @@ artwork.scale_towards_longer 1
 cli_add_playlist_name Default
 close_send_to_tray 1
 deadbeef_version 1.8.8
-filechooser.lastdir file:///run/media/hdd/Media/Music/The%20Distillers/Sing%20Sing%20Death%20House
+filechooser.lastdir file:///run/media/hdd/Media/Music/Deezloader/Escape%20From%20The%20Zoo/%5B2022%5D%20Countin'%20Cards
 gtkui.action_separators 0
 gtkui.color.bar_background 9766 12849 14392
 gtkui.color.bar_foreground 0 48316 54484
@@ -22,7 +22,7 @@ gtkui.delete_files_ask 1
 gtkui.disable_seekbar_overlay 0
 gtkui.eq.visible 0
 gtkui.hide_tray_icon 1
-gtkui.layout.0.6.2 vbox expand="0 1" fill="1 1" homogeneous=0 {hbox expand="0 1 0" fill="1 1 0" homogeneous=0 {playtb {} waveform_seekbar {} volumebar {} } tabbed_playlist hideheaders=0 width=732 {} } 
+gtkui.layout.0.6.2 vbox expand="0 1" fill="1 1" homogeneous=0 {hbox expand="0 1 0" fill="1 1 0" homogeneous=0 {playtb {} waveform_seekbar {} volumebar {} } tabbed_playlist hideheaders=0 width=677 {} } 
 gtkui.override_bar_colors 1
 gtkui.override_listview_colors 0
 gtkui.override_tabstrip_colors 0
@@ -70,12 +70,12 @@ hotkey.key32 "Super c" 0 1 toggle_player_window
 hotkeys_created 1
 logwindow.geometry.h 200
 logwindow.geometry.w 400
-logwindow.geometry.x 34
+logwindow.geometry.x 30
 logwindow.geometry.y 40
-mainwin.geometry.h 460
-mainwin.geometry.w 732
-mainwin.geometry.x 958
-mainwin.geometry.y 135
+mainwin.geometry.h 481
+mainwin.geometry.w 677
+mainwin.geometry.x 573
+mainwin.geometry.y 235
 network.proxy.port 8080
 notify.albumart 1
 notify.albumart_size 64
@@ -95,18 +95,22 @@ playlist.scroll.1 0
 playlist.scroll.2 0
 playlist.scroll.3 0
 playlist.scroll.cursorfollowplayback 1
-playlist.tab.00000 Default
+playlist.tab.00000 Vol. 3
 prefwin.geometry.h 593
 prefwin.geometry.w 686
 prefwin.geometry.x 948
 prefwin.geometry.y 103
 replaygain.preamp_with_rg 0.0000000
 replaygain.processing_flags 0
-resume.paused 0
+resume.paused 1
 resume.playlist 0
-resume.position 0.0464399
+resume.position 97.106277
 resume.track 5
 resume_last_session 0
+searchwin.geometry.h 150
+searchwin.geometry.w 450
+searchwin.geometry.x 733
+searchwin.geometry.y 463
 streamer.16_to_24 0
 streamer.override_samplerate 0
 streamer.samplerate 44100
