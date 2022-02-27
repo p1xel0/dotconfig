@@ -86,11 +86,11 @@ output_plugin alsa
 playback.loop 1
 playback.volume -1.000000
 playlist.current 3
-playlist.cursor.0 0
+playlist.cursor.0 5
 playlist.cursor.1 0
 playlist.cursor.2 0
 playlist.cursor.3 0
-playlist.scroll.0 0
+playlist.scroll.0 -5
 playlist.scroll.1 0
 playlist.scroll.2 0
 playlist.scroll.3 0
@@ -102,9 +102,9 @@ prefwin.geometry.x 948
 prefwin.geometry.y 103
 replaygain.preamp_with_rg 0.0000000
 replaygain.processing_flags 0
-resume.paused 1
+resume.paused 0
 resume.playlist 0
-resume.position 97.106277
+resume.position 0.0464399
 resume.track 5
 resume_last_session 0
 searchwin.geometry.h 150
